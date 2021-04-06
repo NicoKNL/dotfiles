@@ -1,4 +1,5 @@
 local execute = vim.api.nvim_command
+local set_var = vim.api.nvim_set_var
 local map     = vim.api.nvim_set_keymap
 
 local opt = {
@@ -6,6 +7,7 @@ local opt = {
 }
 
 -- preservim/NERDTree
+set_var("NERDTreeShowHidden", 1)
 execute('autocmd StdinReadPre * let s:std_in=1')
 execute('autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif')
 map('n', '<C-m>', ':NERDTree<CR>', opt)

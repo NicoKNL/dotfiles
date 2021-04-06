@@ -29,8 +29,10 @@ local configuration =
 
 local function applyConfiguration(config)
     for option, value in pairs(config) do
-        if value == true or value == false then
+        if value == true then
             vim.cmd("set " .. option)
+        elseif value == false then
+            vim.cmd("set no" .. option)
         else
             vim.cmd("set " .. option .. "=" .. value)
         end
