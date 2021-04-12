@@ -10,6 +10,7 @@ map("n", "-", "ddp", opt)
 
 map("v", "<leader>t", ":lua require('functions').printSelection()<CR>", opt)
 map("v", "<leader>rl", ":lua require('functions').reverseLines()<CR>", opt)
+map("v", "<leader>ft", ":lua require('functions').formatMarkdownTable()<CR>", opt)
 
 local nmap = require("maphelper").nmap
 nmap("hi", "test.me")
