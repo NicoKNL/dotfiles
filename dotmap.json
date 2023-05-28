@@ -1,0 +1,7 @@
+{
+  "link": {
+    ".tmux.conf": "~/.tmux.conf",
+    ".zshrc": "~/.zshrc",
+    "nvim": "~/.config/nvim"
+  }
+}
