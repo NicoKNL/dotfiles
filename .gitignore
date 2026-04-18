@@ -8,3 +8,5 @@ zsh/.zsh_history
 zsh/.zcompdump
 
 site/
+
+.cache/

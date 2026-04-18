@@ -1,3 +1,29 @@
 [project]
 site_name = "dotfiles"
 site_url = "https://nicoknl.github.io/dotfiles/"
+nav = [
+  {"Home" = "index.md"},
+  {"zsh" = "zsh.md"},
+  {"tmux" = [
+    {"Overview" = "tmux/index.md"},
+    {"Sessions" = "tmux/sessions.md"},
+    {"Windows" = "tmux/windows.md"},
+    {"Panes" = "tmux/panes.md"},
+    {"Copy Mode" = "tmux/copy-mode.md"},
+    {"Misc" = "tmux/misc.md"}
+  ]},
+  {"tmux-sessionizer" = "tmux-sessionizer.md"},
+  {"nvim" = [
+    {"Overview" = "nvim/index.md"},
+    {"Options" = "nvim/options.md"},
+    {"Keymaps" = "nvim/keymaps.md"},
+    {"Plugins" = [
+      {"Overview" = "nvim/plugins.md"},
+      {"Telescope" = "nvim/plugins/telescope.md"},
+      {"LSP" = "nvim/plugins/lsp.md"},
+      {"nvim-tree" = "nvim/plugins/nvim-tree.md"}
+    ]},
+    {"Adding Plugins" = "nvim/adding-plugins.md"}
+  ]},
+  {"alacritty" = "alacritty.md"}
+]

@@ -7,8 +7,9 @@
 --
 -- Inside the tree:
 --   o / <CR>    open file
---   v           open in vertical split
---   s           open in horizontal split
+--   <C-v>       open in vertical split
+--   <C-x>       open in horizontal split
+--   s           system open (macOS: opens in default app)
 --   a           create file/dir (trailing / = dir)
 --   d           delete
 --   r           rename
