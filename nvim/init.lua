@@ -49,6 +49,11 @@ map("n", "<C-u>", "<C-u>zz")
 -- =============================================================================
 -- PLUGINS (vim.pack — built-in, requires Neovim 0.11+)
 -- =============================================================================
+-- Plugin configs live in lua/plugins/. Each file calls vim.pack.add() and
+-- then configures the plugin. Packages stored in:
+--   ~/.local/share/nvim/site/pack/
 
--- Add plugins with: vim.pack.add("https://github.com/author/plugin.git")
--- Packages are stored in ~/.local/share/nvim/site/pack/
+require("plugins.telescope")   -- fuzzy finder: files, grep, buffers, symbols
+require("plugins.lsp")         -- LSP: go-to-definition, hover, diagnostics
+require("plugins.nvim-tree")   -- file explorer sidebar
+require("plugins.git")         -- gitsigns (inline hunks) + diffview (diff panel)

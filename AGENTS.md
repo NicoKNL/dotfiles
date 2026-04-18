@@ -49,3 +49,45 @@ Tracked in `zsh/check_versions.sh` (sourced by shell):
 ## No test suite, no linter
 
 No test, lint, typecheck, or build step beyond `zensical build` for docs.
+
+## Neovim plugin conventions
+
+Plugin manager: **`vim.pack` (built-in, Neovim 0.11+)**. No lazy.nvim, packer, or vim-plug.
+
+### Adding plugins
+
+`vim.pack.add` takes a **list table of full GitHub HTTPS URLs** — not short `owner/repo` strings:
+
+```lua
+vim.pack.add({
+  "https://github.com/owner/plugin-name",
+  "https://github.com/owner/other-plugin",
+})
+```
+
+Single-plugin shorthand (`vim.pack.add("owner/repo")`) is **invalid** and will error.
+
+### Plugin config files
+
+One file per logical group in `nvim/lua/plugins/`. Each file:
+1. Calls `vim.pack.add({...})` with full URLs
+2. Calls `require("plugin").setup({...})`
+3. Registers keymaps via `vim.keymap.set`
+
+Then `require("plugins.filename")` added to `nvim/init.lua`.
+
+### Lock file
+
+`nvim/nvim-pack-lock.json` pins installed revs. After installing, capture with:
+
+```sh
+git -C ~/.local/share/nvim/site/pack/core/opt/<plugin-name> rev-parse HEAD
+```
+
+Pack path is `~/.local/share/nvim/site/pack/core/opt/<plugin-name>`.
+
+### Install / update
+
+```sh
+nvim --headless +"lua vim.pack.update()" +qa
+```
