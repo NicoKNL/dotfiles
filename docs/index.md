@@ -11,6 +11,7 @@ Symlink-based dotfiles manager for macOS. Configs are kept in this repo and depl
 | `tmux/.tmux.conf` | `~/.tmux.conf` |
 | `alacritty/alacritty.toml` | `~/.config/alacritty/alacritty.toml` |
 | `nvim/` | `~/.config/nvim` |
+| `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
 
 ## Deploy
 
@@ -47,3 +48,13 @@ The mapping file declares all symlinks under the `link` key:
 ```
 
 Add new entries here to include additional configs in the deploy.
+
+## References
+
+- [tmux cheatsheet](tmux.md)
+
+## Prerequisites
+
+| Tool | Install |
+|------|---------|
+| `fzf` | `brew install fzf` — required by tmux-sessionizer |

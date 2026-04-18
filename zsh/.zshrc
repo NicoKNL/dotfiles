@@ -29,3 +29,8 @@ PS1='%n@%m %~ %# '
 
 # Local overrides and secrets (not committed)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# tmux: attach to existing session or create new one
+if [ -z "$TMUX" ]; then
+  tmux-sessionizer
+fi

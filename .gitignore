@@ -6,3 +6,5 @@
 # Shell history and completion cache — may contain secrets
 zsh/.zsh_history
 zsh/.zcompdump
+
+site/
