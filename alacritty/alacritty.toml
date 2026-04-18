@@ -1,0 +1,15 @@
+[font.normal]
+family = "MesloLGS NF"
+
+[font]
+size = 13.0
+
+[window]
+padding.x = 8
+padding.y = 8
+
+[scrolling]
+history = 10000
+
+[terminal.shell]
+program = "/bin/zsh"

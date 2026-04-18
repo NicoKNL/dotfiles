@@ -1,0 +1,8 @@
+# Local shell overrides — never commit this
+.zshrc.local
+
+.vscode/
+
+# Shell history and completion cache — may contain secrets
+zsh/.zsh_history
+zsh/.zcompdump

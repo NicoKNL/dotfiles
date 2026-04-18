@@ -1,0 +1,9 @@
+{
+  "link": {
+    "zsh/.zshenv":               "~/.zshenv",
+    "zsh":                       "~/.config/zsh",
+    "tmux/.tmux.conf":           "~/.tmux.conf",
+    "alacritty/alacritty.toml":  "~/.config/alacritty/alacritty.toml",
+    "nvim":                      "~/.config/nvim"
+  }
+}
