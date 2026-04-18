@@ -12,6 +12,7 @@ Symlink-based dotfiles manager for macOS. Configs are kept in this repo and depl
 | `alacritty/alacritty.toml` | `~/.config/alacritty/alacritty.toml` |
 | `nvim/` | `~/.config/nvim` |
 | `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
+| `config/tmux-sessionizer.conf` | `~/.config/tmux-sessionizer/tmux-sessionizer.conf` |
 
 ## Deploy
 
@@ -49,12 +50,33 @@ The mapping file declares all symlinks under the `link` key:
 
 Add new entries here to include additional configs in the deploy.
 
+## Adding a new dotfile
+
+1. Place the file or directory in an appropriate subdirectory of this repo (create one if needed).
+2. Add an entry to `dotmap.json` under the `"link"` key:
+
+```json
+{
+  "link": {
+    "source/rel/path": "~/target/path"
+  }
+}
+```
+
+3. Run `python3 dot.py` to deploy. Parent directories are created automatically; conflicts are backed up as `.bak` (`.bak1`, `.bak2`, … if a `.bak` already exists).
+
 ## References
 
 - [tmux cheatsheet](tmux.md)
+- [tmux-sessionizer](tmux-sessionizer.md)
+- [zsh](zsh.md)
+- [nvim](nvim.md)
+- [alacritty](alacritty.md)
 
 ## Prerequisites
 
-| Tool | Install |
-|------|---------|
-| `fzf` | `brew install fzf` — required by tmux-sessionizer |
+| Tool | Version | Install |
+|------|---------|---------|
+| `fzf` | any | `brew install fzf` — required by tmux-sessionizer |
+| `nvim` | ≥ 0.12.1 | `brew install neovim` |
+| `tmux` | ≥ 3.4 | `brew install tmux` |
