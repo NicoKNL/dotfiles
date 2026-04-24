@@ -1,13 +1,3 @@
-# PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/Applications/nvim/bin:$PATH
-export PATH=/Users/nico/Library/Python/3.9/bin:$PATH
-export PATH="$PATH:~/.local/bin"
-export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
-
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
