@@ -21,6 +21,6 @@ PS1='%n@%m %~ %# '
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # tmux: attach to existing session or create new one
-if [ -z "$TMUX" ]; then
+if [[ -z "$TMUX" && -t 0 ]]; then
   tmux-sessionizer
 fi
