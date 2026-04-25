@@ -47,19 +47,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Python — Pyright
-vim.lsp.config("pyright", {
-  cmd = { "pyright-langserver", "--stdio" },
+-- Python — ty (Astral)
+vim.lsp.config("ty", {
+  cmd = { "ty", "server" },
   filetypes = { "python" },
-  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "basic",
-        autoImportCompletions = true,
-      },
-    },
-  },
+  root_markers = { "pyproject.toml", "uv.lock", "setup.py", "setup.cfg", ".git" },
 })
 
 -- TypeScript / JavaScript — ts_ls
@@ -69,4 +61,4 @@ vim.lsp.config("ts_ls", {
   root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
 })
 
-vim.lsp.enable({ "pyright", "ts_ls" })
+vim.lsp.enable({ "ty", "ts_ls" })
