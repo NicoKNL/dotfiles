@@ -3,7 +3,7 @@
 -- =============================================================================
 -- Deps: plenary.nvim, telescope-fzf-native.nvim (requires `make` on first install)
 -- Keymaps:
---   <leader>ff  find files
+--   <leader>ff  find files (including hidden/dotfiles)
 --   <leader>fg  live grep (requires ripgrep)
 --   <leader>fb  open buffers
 --   <leader>fs  LSP document symbols
@@ -41,7 +41,7 @@ pcall(telescope.load_extension, "fzf")
 
 local map = vim.keymap.set
 
-map("n", "<leader>ff", builtin.find_files,          { desc = "Find files" })
+map("n", "<leader>ff", function() builtin.find_files({ hidden = true }) end, { desc = "Find files" })
 map("n", "<leader>fg", builtin.live_grep,            { desc = "Live grep" })
 map("n", "<leader>fb", builtin.buffers,              { desc = "Find buffers" })
 map("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
