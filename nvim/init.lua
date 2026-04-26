@@ -34,6 +34,7 @@ require("keymaps")
 -- then configures the plugin. Packages stored in:
 --   ~/.local/share/nvim/site/pack/
 
+require("plugins.colorscheme") -- Catppuccin Mocha — load first so colors apply to all plugins
 require("plugins.telescope")   -- fuzzy finder: files, grep, buffers, symbols
 require("plugins.lsp")         -- LSP: go-to-definition, hover, diagnostics
 require("plugins.nvim-tree")   -- file explorer sidebar
