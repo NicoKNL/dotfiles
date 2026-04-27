@@ -28,8 +28,8 @@ require("gitsigns").setup({
     end
 
     -- Navigate hunks
-    map("n", "]h", gs.next_hunk,    "Next hunk")
-    map("n", "[h", gs.prev_hunk,    "Prev hunk")
+    map("n", "]g", gs.next_hunk,    "Next hunk")
+    map("n", "[g", gs.prev_hunk,    "Prev hunk")
 
     -- Stage / reset hunk
     map("n", "<leader>gs", gs.stage_hunk,   "Stage hunk")
