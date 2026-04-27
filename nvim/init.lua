@@ -40,3 +40,4 @@ require("plugins.lsp")         -- LSP: go-to-definition, hover, diagnostics
 require("plugins.nvim-tree")   -- file explorer sidebar
 require("plugins.git")         -- gitsigns (inline hunks) + diffview (diff panel)
 require("plugins.treesitter")  -- Tree-sitter: syntax highlighting + indent
+require("plugins.statusline")  -- lualine: statusline with mode, branch, diagnostics, location

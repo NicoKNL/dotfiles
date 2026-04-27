@@ -15,6 +15,7 @@ require("catppuccin").setup({
     gitsigns   = true,
     diffview   = true,
     treesitter = true,
+    lualine   = true,
     native_lsp = {
       enabled = true,
       underlines = {
