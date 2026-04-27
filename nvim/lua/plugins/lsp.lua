@@ -4,8 +4,9 @@
 -- Uses Neovim 0.11+ native vim.lsp.config — no plugins needed.
 --
 -- Language servers (must be installed on system):
---   pyright   → npm install -g pyright
---   ts_ls     → npm install -g typescript typescript-language-server
+--   ty                   → add to project deps (uv run ty server)
+--   ts_ls                → npm install -g typescript typescript-language-server
+--   yaml-language-server → npm install -g yaml-language-server
 --
 -- Keymaps (active when LSP attaches to buffer):
 --   gd          go to definition
@@ -61,4 +62,11 @@ vim.lsp.config("ts_ls", {
   root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
 })
 
-vim.lsp.enable({ "ty", "ts_ls" })
+-- YAML — yaml-language-server
+vim.lsp.config("yamlls", {
+  cmd = { "yaml-language-server", "--stdio" },
+  filetypes = { "yaml", "yaml.docker-compose" },
+  root_markers = { ".git" },
+})
+
+vim.lsp.enable({ "ty", "ts_ls", "yamlls" })
