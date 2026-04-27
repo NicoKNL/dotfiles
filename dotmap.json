@@ -6,6 +6,7 @@
     "alacritty/alacritty.toml":  "~/.config/alacritty/alacritty.toml",
     "nvim":                      "~/.config/nvim",
     "scripts/tmux-sessionizer":  "~/.local/bin/tmux-sessionizer",
-    "config/tmux-sessionizer.conf": "~/.config/tmux-sessionizer/tmux-sessionizer.conf"
+    "config/tmux-sessionizer.conf": "~/.config/tmux-sessionizer/tmux-sessionizer.conf",
+    "starship/starship.toml":       "~/.config/starship.toml"
   }
 }

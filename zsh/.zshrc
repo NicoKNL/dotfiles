@@ -12,7 +12,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias k='kubectl'
 
 # Prompt
-PS1='%n@%m %~ %# '
+eval "$(starship init zsh)"
 
 # Version checks
 [[ -f "$ZDOTDIR/check_versions.sh" ]] && source "$ZDOTDIR/check_versions.sh"
