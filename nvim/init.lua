@@ -46,3 +46,7 @@ require("plugins.neogit")
 require("plugins.noice")   -- noice.nvim: floating cmdline, messages, notifications
 require("plugins.neotest")     -- neotest: in-editor test runner (pytest via uv)
 require("plugins.completion")  -- blink.cmp: LSP completions + copilot.vim ghost text
+require("plugins.todo-comments")  -- highlight TODO/FIXME/HACK/NOTE comments + telescope picker
+require("plugins.conform")        -- format on save (ruff, prettier, stylua)
+require("plugins.autopairs")      -- auto-close brackets and quotes
+require("plugins.indent-blankline") -- visual indent guides
