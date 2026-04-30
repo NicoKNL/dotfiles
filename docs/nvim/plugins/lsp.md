@@ -24,5 +24,6 @@ Must be installed on the system:
 
 | Language | Server | Install |
 |----------|--------|---------|
-| Python | `pyright` | `npm install -g pyright` |
+| Python | `ty` (Astral) | Add to project deps — invoked via `uv run ty server` |
 | TypeScript / JavaScript | `ts_ls` | `npm install -g typescript typescript-language-server` |
+| YAML | `yaml-language-server` | `npm install -g yaml-language-server` |

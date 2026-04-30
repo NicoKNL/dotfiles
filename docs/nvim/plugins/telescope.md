@@ -8,9 +8,9 @@ Packages: [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), [t
 
 | Key | Action |
 |-----|--------|
-| `<leader>ff` | Find files in project |
-| `<leader>fg` | Live grep (search file contents) |
-| `<leader>fb` | Open buffers |
+| `<leader>ff` | Find files in project (including hidden/dotfiles) |
+| `<leader>fg` | Live grep (search file contents — requires ripgrep) |
+| `<leader>fb` | Git branches (checkout / create) |
 | `<leader>fs` | LSP document symbols |
 | `<leader>fr` | Recently opened files |
 | `<leader>fh` | Help tags |

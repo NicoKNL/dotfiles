@@ -7,6 +7,9 @@ size = 13.0
 [window]
 padding.x = 8
 padding.y = 8
+dynamic_padding = true
+decorations = "Buttonless"
+opacity = 0.93
 
 [scrolling]
 history = 10000

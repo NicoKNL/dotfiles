@@ -29,7 +29,7 @@ Key sections:
 |-------|-----------|
 | `k` | `kubectl` |
 
-**Prompt** — minimal: `user@host ~/path %`
+**Prompt** — [starship](https://starship.rs/) with Catppuccin Mocha palette. Powerline segments: OS icon → username → directory → git branch/status → language versions → conda → time → command duration. Config at `starship/starship.toml`, symlinked to `~/.config/starship.toml`. Requires `starship` on `PATH` (`brew install starship`).
 
 **Version checks** — sources `check_versions.sh` on every interactive shell start (see below).
 

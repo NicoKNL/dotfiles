@@ -9,6 +9,7 @@ vim.pack.add({
 
 require("catppuccin").setup({
   flavour = "mocha",
+  transparent_background = true,
   integrations = {
     telescope  = { enabled = true },
     nvim_tree  = true,

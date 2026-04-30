@@ -10,6 +10,6 @@
 | `tmux attach -t <name>` | attach to session by name |
 | `tmux ls` | list sessions from shell |
 
-> **Sessionizer** (`C-Space f`) searches `~/Developer` and `~/personal` (depth 1) using `fzf`.
+> **Sessionizer** (`C-Space f`) searches `~/Developer` and `/buildstore` (depth 1) using `fzf`.
 > Requires `fzf` (`brew install fzf`) and `~/.local/bin` in `PATH`.
 > Pass a path directly to skip the picker: `tmux-sessionizer ~/Developer/myproject`

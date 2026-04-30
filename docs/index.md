@@ -13,6 +13,7 @@ Symlink-based dotfiles manager for macOS. Configs are kept in this repo and depl
 | `nvim/` | `~/.config/nvim` |
 | `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
 | `config/tmux-sessionizer.conf` | `~/.config/tmux-sessionizer/tmux-sessionizer.conf` |
+| `starship/starship.toml` | `~/.config/starship.toml` |
 
 ## Deploy
 
@@ -67,10 +68,10 @@ Add new entries here to include additional configs in the deploy.
 
 ## References
 
-- [tmux cheatsheet](tmux.md)
+- [tmux cheatsheet](tmux/index.md)
 - [tmux-sessionizer](tmux-sessionizer.md)
 - [zsh](zsh.md)
-- [nvim](nvim.md)
+- [nvim](nvim/index.md)
 - [alacritty](alacritty.md)
 
 ## Prerequisites
