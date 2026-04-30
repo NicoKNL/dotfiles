@@ -43,3 +43,4 @@ require("plugins.treesitter")  -- Tree-sitter: syntax highlighting + indent
 require("plugins.statusline")  -- lualine: statusline with mode, branch, diagnostics, location
 require("plugins.harpoon")     -- harpoon2: fast file navigation
 require("plugins.neogit")
+require("plugins.noice")   -- noice.nvim: floating cmdline, messages, notifications
