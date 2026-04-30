@@ -8,6 +8,16 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
+# History
+HISTFILE="$ZDOTDIR/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
+
+# fzf — fuzzy history search (CTRL-R), file picker (CTRL-T), cd (ALT-C)
+source <(fzf --zsh)
+bindkey '^F' fzf-cd-widget  # CTRL-F: fuzzy cd (replaces ALT-C)
+
 # Aliases
 alias k='kubectl'
 

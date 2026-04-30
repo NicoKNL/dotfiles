@@ -132,6 +132,11 @@ def main():
         print(f"Dry run complete. {counts['dry-run']} would be linked.")
     else:
         print(f"{counts['linked']} linked, {counts['skipped']} skipped, {counts['error']} errors.")
+        # Secure history file
+        history_file = os.path.expanduser("~/.config/zsh/.zsh_history")
+        if os.path.exists(history_file):
+            os.chmod(history_file, 0o600)
+            print(f"[chmod 600] {history_file}")
 
 
 if __name__ == "__main__":
