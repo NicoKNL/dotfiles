@@ -44,4 +44,5 @@ require("plugins.statusline")  -- lualine: statusline with mode, branch, diagnos
 require("plugins.harpoon")     -- harpoon2: fast file navigation
 require("plugins.neogit")
 require("plugins.noice")   -- noice.nvim: floating cmdline, messages, notifications
-require("plugins.neotest") -- neotest: in-editor test runner (pytest via uv)
+require("plugins.neotest")     -- neotest: in-editor test runner (pytest via uv)
+require("plugins.completion")  -- blink.cmp: LSP completions + copilot.vim ghost text
