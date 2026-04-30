@@ -14,13 +14,14 @@ vim.pack.add({
 -- ---------------------------------------------------------------------------
 require("gitsigns").setup({
   signs = {
-    add          = { text = "▎" },
-    change       = { text = "▎" },
-    delete       = { text = "▁" },
-    topdelete    = { text = "▔" },
-    changedelete = { text = "▎" },
-    untracked    = { text = "▎" },
+    add          = { text = "█" },
+    change       = { text = "█" },
+    delete       = { text = "█" },
+    topdelete    = { text = "▲" },
+    changedelete = { text = "█" },
+    untracked    = { text = "█" },
   },
+  numhl = true,
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
     local map = function(mode, lhs, rhs, desc)

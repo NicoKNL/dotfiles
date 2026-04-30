@@ -17,6 +17,10 @@
       "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
+    "neogit": {
+      "rev": "88000e7e60177558d1b428a0d561c92e5d81341e",
+      "src": "https://github.com/NeogitOrg/neogit"
+    },
     "nvim": {
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim"
