@@ -50,3 +50,4 @@ require("plugins.todo-comments")  -- highlight TODO/FIXME/HACK/NOTE comments + t
 require("plugins.conform")        -- format on save (ruff, prettier, stylua)
 require("plugins.autopairs")      -- auto-close brackets and quotes
 require("plugins.indent-blankline") -- visual indent guides
+require("plugins.smear-cursor")    -- animated cursor smear effect
