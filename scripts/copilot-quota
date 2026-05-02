@@ -1,0 +1,68 @@
+#!/bin/sh
+# Displays GitHub Copilot premium request usage percentage for tmux status bar.
+# Uses the undocumented copilot_internal/user API (same as VSCode extensions).
+# Caches result for 10 minutes to avoid hitting the API every status refresh.
+
+CACHE_FILE="/tmp/copilot-quota-cache"
+CACHE_TTL=600  # seconds
+APPS_JSON="$HOME/.config/github-copilot/apps.json"
+ICON="󰊤"
+
+# Bail silently if apps.json doesn't exist
+[ -f "$APPS_JSON" ] || exit 0
+
+# Use cached value if fresh enough
+if [ -f "$CACHE_FILE" ]; then
+  cache_age=$(( $(date +%s) - $(stat -f %m "$CACHE_FILE" 2>/dev/null || echo 0) ))
+  if [ "$cache_age" -lt "$CACHE_TTL" ]; then
+    cat "$CACHE_FILE"
+    exit 0
+  fi
+fi
+
+# Extract OAuth token
+OAUTH_TOKEN=$(python3 -c "
+import json, sys
+try:
+    d = json.load(open('$APPS_JSON'))
+    print(list(d.values())[0]['oauth_token'])
+except Exception:
+    sys.exit(1)
+" 2>/dev/null) || exit 0
+
+# Fetch quota data
+RESULT=$(curl -sf --max-time 5 \
+  -H "Authorization: Bearer $OAUTH_TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  "https://api.github.com/copilot_internal/user" 2>/dev/null) || {
+  # On failure, show stale cache if available, else nothing
+  [ -f "$CACHE_FILE" ] && cat "$CACHE_FILE"
+  exit 0
+}
+
+OUTPUT=$(python3 -c "
+import json, sys
+try:
+    d = json.load(sys.stdin)
+    pi = d['quota_snapshots']['premium_interactions']
+    if pi.get('unlimited'):
+        print('$ICON ∞')
+        sys.exit(0)
+    entitlement = pi['entitlement']
+    remaining = pi['quota_remaining']
+    used = entitlement - remaining
+    pct = round(used / entitlement * 100) if entitlement else 0
+    print(f'$ICON {pct}%')
+except Exception:
+    sys.exit(1)
+" <<EOF
+$RESULT
+EOF
+) || {
+  [ -f "$CACHE_FILE" ] && cat "$CACHE_FILE"
+  exit 0
+}
+
+printf '%s' "$OUTPUT" > "$CACHE_FILE"
+cat "$CACHE_FILE"
