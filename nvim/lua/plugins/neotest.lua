@@ -2,6 +2,7 @@
 -- NEOTEST — test runner UI
 -- neotest: core framework
 -- neotest-python: pytest/unittest adapter
+-- neotest-jest: Jest/TypeScript adapter
 -- FixCursorHold: fixes CursorHold perf (neotest dep)
 -- =============================================================================
 
@@ -9,11 +10,21 @@ vim.pack.add({
   "https://github.com/nvim-neotest/nvim-nio",
   "https://github.com/nvim-neotest/neotest",
   "https://github.com/nvim-neotest/neotest-python",
+  "https://github.com/nvim-neotest/neotest-jest",
   "https://github.com/antoinemadec/FixCursorHold.nvim",
 })
 
 require("neotest").setup({
   adapters = {
+    require("neotest-jest")({
+      -- Use the project-local jest binary
+      jestCommand = function(root)
+        return root .. "/node_modules/.bin/jest"
+      end,
+      jestConfigFile = "jest.config.js",
+      -- Suppress interactive watch mode so neotest gets clean output
+      env = { CI = "true" },
+    }),
     require("neotest-python")({
       runner = "pytest",
       -- Use `uv run python` for uv projects, fall back to system python3
