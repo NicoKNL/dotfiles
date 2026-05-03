@@ -15,13 +15,9 @@ vim.pack.add({
 })
 
 require("neotest").setup({
+  log_level = vim.log.levels.WARN,
   adapters = {
     require("neotest-jest")({
-      -- Use the project-local jest binary
-      jestCommand = function(root)
-        return root .. "/node_modules/.bin/jest"
-      end,
-      jestConfigFile = "jest.config.js",
       -- Suppress interactive watch mode so neotest gets clean output
       env = { CI = "true" },
     }),

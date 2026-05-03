@@ -3,15 +3,7 @@ vim.pack.add({
 })
 
 -- Install parsers
-require("nvim-treesitter").install({ "python", "yaml" })
-
--- Highlighting via Neovim core (0.12+)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "python" },
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+require("nvim-treesitter").install({ "python", "yaml", "typescript", "javascript" })
 
 -- Folding: treesitter-based by default, indent fallback
 vim.opt.foldmethod = "expr"
