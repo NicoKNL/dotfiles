@@ -51,9 +51,9 @@ map("n", "<leader>fb", function()
       actions.select_default:replace(function()
         local entry = action_state.get_selected_entry()
         actions.close(prompt_bufnr)
-        if entry.value:match("^remotes/") then
+        if entry.value:match("^origin/") then
           -- create local tracking branch instead of detached HEAD
-          vim.fn.system("git checkout --track " .. entry.value:gsub("^remotes/", ""))
+          vim.fn.system("git checkout --track " .. entry.value)
         else
           vim.fn.system("git checkout " .. entry.value)
         end
