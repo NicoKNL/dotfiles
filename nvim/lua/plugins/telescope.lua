@@ -42,7 +42,7 @@ pcall(telescope.load_extension, "fzf")
 local map = vim.keymap.set
 
 map("n", "<leader>ff", function() builtin.find_files({ hidden = true }) end, { desc = "Find files" })
-map("n", "<leader>fg", builtin.live_grep,            { desc = "Live grep" })
+map("n", "<leader>fg", function() builtin.live_grep({ additional_args = { "--hidden" } }) end, { desc = "Live grep" })
 map("n", "<leader>fb", builtin.git_branches,          { desc = "Find branches" })
 map("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
 map("n", "<leader>fr", builtin.oldfiles,             { desc = "Recent files" })
