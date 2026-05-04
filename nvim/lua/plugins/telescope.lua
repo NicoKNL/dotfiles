@@ -43,7 +43,26 @@ local map = vim.keymap.set
 
 map("n", "<leader>ff", function() builtin.find_files({ hidden = true }) end, { desc = "Find files" })
 map("n", "<leader>fg", function() builtin.live_grep({ additional_args = { "--hidden" } }) end, { desc = "Live grep" })
-map("n", "<leader>fb", builtin.git_branches,          { desc = "Find branches" })
+map("n", "<leader>fb", function()
+  builtin.git_branches({
+    attach_mappings = function(prompt_bufnr, _)
+      local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
+      actions.select_default:replace(function()
+        local entry = action_state.get_selected_entry()
+        actions.close(prompt_bufnr)
+        if entry.value:match("^remotes/") then
+          -- create local tracking branch instead of detached HEAD
+          vim.fn.system("git checkout --track " .. entry.value:gsub("^remotes/", ""))
+        else
+          vim.fn.system("git checkout " .. entry.value)
+        end
+        vim.cmd("checktime")
+      end)
+      return true
+    end,
+  })
+end, { desc = "Find branches" })
 map("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
 map("n", "<leader>fr", builtin.oldfiles,             { desc = "Recent files" })
 map("n", "<leader>fh", builtin.help_tags,            { desc = "Help tags" })
