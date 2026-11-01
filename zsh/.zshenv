@@ -10,3 +10,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # True color
 export COLORTERM=truecolor
+
+# Local overrides and secrets (not committed)
+[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
