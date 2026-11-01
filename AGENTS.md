@@ -27,7 +27,6 @@ That's it. `dot.py` creates parent dirs and backs up conflicts as `.bak` (`.bak1
 | `alacritty/alacritty.toml` | `~/.config/alacritty/alacritty.toml` |
 | `nvim/` | `~/.config/nvim/` |
 | `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
-| `scripts/copilot-quota` | `~/.local/bin/copilot-quota` |
 | `config/tmux-sessionizer.conf` | `~/.config/tmux-sessionizer/tmux-sessionizer.conf` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
 
