@@ -27,12 +27,13 @@ That's it. `dot.py` creates parent dirs and backs up conflicts as `.bak` (`.bak1
 | `alacritty/alacritty.toml` | `~/.config/alacritty/alacritty.toml` |
 | `nvim/` | `~/.config/nvim/` |
 | `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
+| `scripts/copilot-quota` | `~/.local/bin/copilot-quota` |
 | `config/tmux-sessionizer.conf` | `~/.config/tmux-sessionizer/tmux-sessionizer.conf` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
 
 ## Docs site
 
-Built with `zensical`. Config in `zensical.toml`. Source in `docs/`. Built output in `site/` (committed).
+Built with `zensical`. Config in `zensical.toml`. Source in `docs/`. Built output in `site/` (gitignored; CI builds it on deploy).
 
 ```sh
 pip install zensical
@@ -53,7 +54,7 @@ No test, lint, typecheck, or build step beyond `zensical build` for docs.
 
 ## Neovim plugin conventions
 
-Plugin manager: **`vim.pack` (built-in, Neovim 0.11+)**. No lazy.nvim, packer, or vim-plug.
+Plugin manager: **`vim.pack` (built-in, Neovim 0.12+)**. No lazy.nvim, packer, or vim-plug.
 
 ### Adding plugins
 
