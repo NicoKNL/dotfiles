@@ -6,7 +6,7 @@ Config at `alacritty/alacritty.toml`, symlinked to `~/.config/alacritty/alacritt
 
 | Setting | Value | Notes |
 |---------|-------|-------|
-| Font family | `MesloLGS NF` | Nerd Font — required for prompt/tmux icons |
+| Font family | `MesloLGS Nerd Font` | Nerd Font — required for prompt/tmux icons |
 | Font size | 13.0 | |
 | Window padding | 8px × 8px | Horizontal and vertical |
 | Window decorations | `Buttonless` | macOS: hides title bar buttons |
@@ -16,8 +16,8 @@ Config at `alacritty/alacritty.toml`, symlinked to `~/.config/alacritty/alacritt
 
 ## Font
 
-`MesloLGS NF` is a patched Nerd Font. Install via [Nerd Fonts](https://www.nerdfonts.com/) or:
+`MesloLGS Nerd Font` is a patched Nerd Font. Install via [Nerd Fonts](https://www.nerdfonts.com/) or:
 
 ```bash
-brew install --cask font-meslo-lg-nerd-font
+brew install --cask font-meslo-lg-nerd-font   # macOS; on Linux setup.sh installs it to ~/.local/share/fonts
 ```

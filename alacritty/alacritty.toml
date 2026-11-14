@@ -1,5 +1,5 @@
 [font.normal]
-family = "MesloLGS NF"
+family = "MesloLGS Nerd Font"
 
 [font]
 size = 13.0
@@ -16,6 +16,9 @@ history = 10000
 
 [terminal.shell]
 program = "/bin/zsh"
+
+[debug]
+renderer = "gles2pure"
 
 # Catppuccin Mocha
 [colors.primary]
