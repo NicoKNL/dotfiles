@@ -318,7 +318,7 @@ if [[ ! -z $session_cmd ]]; then
 elif [[ ! -z $user_selected ]]; then
     selected="$user_selected"
 else
-    selected=$({ echo "$PWD"; find_dirs; } | fzf --header="current: $PWD")
+    selected=$({ echo "$HOME"; [[ "$PWD" != "$HOME" ]] && echo "$PWD"; find_dirs; } | fzf --header="current: $PWD")
 fi
 
 if [[ -z $selected ]]; then
