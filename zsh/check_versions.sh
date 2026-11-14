@@ -17,7 +17,7 @@ _version_gte() {
 if command -v nvim &>/dev/null; then
   _nvim_ver=$(nvim --version 2>/dev/null | head -1 | sed 's/NVIM v//')
   if ! _version_gte "$_nvim_ver" "$_NVIM_MIN"; then
-    echo "[warn] nvim $_nvim_ver < required $_NVIM_MIN — run: brew upgrade neovim"
+    echo "[warn] nvim $_nvim_ver < required $_NVIM_MIN — run: mise install"
   fi
 fi
 
@@ -25,7 +25,7 @@ fi
 if command -v tmux &>/dev/null; then
   _tmux_ver=$(tmux -V 2>/dev/null | sed 's/tmux //')
   if ! _version_gte "$_tmux_ver" "$_TMUX_MIN"; then
-    echo "[warn] tmux $_tmux_ver < required $_TMUX_MIN — run: brew upgrade tmux"
+    echo "[warn] tmux $_tmux_ver < required $_TMUX_MIN — upgrade via your system package manager"
   fi
 fi
 

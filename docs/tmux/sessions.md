@@ -11,5 +11,5 @@
 | `tmux ls` | list sessions from shell |
 
 > **Sessionizer** (`C-Space f`) searches `~/Developer` and `/buildstore` (depth 1) using `fzf`.
-> Requires `fzf` (`brew install fzf`) and `~/.local/bin` in `PATH`.
+> Requires `fzf` (installed via mise) and `~/.local/bin` in `PATH`.
 > Pass a path directly to skip the picker: `tmux-sessionizer ~/Developer/myproject`

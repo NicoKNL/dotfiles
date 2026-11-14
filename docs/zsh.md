@@ -15,11 +15,11 @@ zsh normally reads `~/.zshrc`. Setting `ZDOTDIR` in `~/.zshenv` redirects all co
 
 Key sections:
 
-**PATH** — Homebrew, nvim, Python 3.9 user bin, `~/.local/bin`, Node 22.
+**PATH** (`.zshenv`) — Homebrew (macOS), `~/.local/bin` (also where `mise` lives).
 
 **XDG** — `XDG_CONFIG_HOME` set to `~/.config`.
 
-**NVM** — Node version manager sourced if present.
+**mise** — `mise activate zsh` puts the tools from `mise/config.toml` (nvim, node, uv, fzf, starship, …) on `PATH`.
 
 **bun** — bun runtime sourced if present.
 
@@ -29,7 +29,7 @@ Key sections:
 |-------|-----------|
 | `k` | `kubectl` |
 
-**Prompt** — [starship](https://starship.rs/) with Catppuccin Mocha palette. Powerline segments: OS icon → username → directory → git branch/status → language versions → conda → time → command duration. Config at `starship/starship.toml`, symlinked to `~/.config/starship.toml`. Requires `starship` on `PATH` (`brew install starship`).
+**Prompt** — [starship](https://starship.rs/) with Catppuccin Mocha palette. Powerline segments: OS icon → username → directory → git branch/status → language versions → conda → time → command duration. Config at `starship/starship.toml`, symlinked to `~/.config/starship.toml`. `starship` is installed via mise.
 
 **Version checks** — sources `check_versions.sh` on every interactive shell start (see below).
 
@@ -49,7 +49,7 @@ Sourced by `.zshrc` on every interactive shell start. Warns if installed tools a
 Example warning:
 
 ```
-[warn] nvim 0.11.0 < required 0.12.1 — run: brew upgrade neovim
+[warn] nvim 0.11.0 < required 0.12.1 — run: mise install
 ```
 
 To add a new tool check, follow the existing pattern in `zsh/check_versions.sh`.

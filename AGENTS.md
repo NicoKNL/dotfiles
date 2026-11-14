@@ -1,5 +1,14 @@
 # AGENTS.md
 
+## Bootstrap a new machine
+
+```sh
+./setup.sh              # brew/apt/dnf system pkgs → dot.py → mise install → vim.pack.update → chsh zsh
+./setup.sh --no-system  # skip sudo/system packages
+```
+
+CLI tools (nvim, node, uv, fzf, starship, ripgrep, tree-sitter, lua-language-server, npm LSPs) are pinned in `mise/config.toml`, not installed via brew/apt. Only zsh, tmux, compiler, clipboard, alacritty, and the Nerd Font are system packages.
+
 ## Deploy
 
 ```sh
@@ -29,6 +38,7 @@ That's it. `dot.py` creates parent dirs and backs up conflicts as `.bak` (`.bak1
 | `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
 | `config/tmux-sessionizer.conf` | `~/.config/tmux-sessionizer/tmux-sessionizer.conf` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
+| `mise/config.toml` | `~/.config/mise/config.toml` |
 
 ## Docs site
 
@@ -43,7 +53,7 @@ CI auto-deploys to GitHub Pages on push to `main`/`master`.
 
 ## Version requirements
 
-Tracked in `zsh/check_versions.sh` (sourced by shell):
+nvim version pinned in `mise/config.toml`; minimums also warned by `zsh/check_versions.sh` (sourced by shell):
 - nvim ≥ 0.12.1
 - tmux ≥ 3.4
 

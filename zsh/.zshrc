@@ -1,7 +1,5 @@
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# mise — tool versions (nvim, node, uv, fzf, starship, …) from ~/.config/mise/config.toml
+command -v mise &>/dev/null && eval "$(mise activate zsh)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

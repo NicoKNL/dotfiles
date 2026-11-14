@@ -1,0 +1,23 @@
+# Global tool versions — symlinked to ~/.config/mise/config.toml
+# Install / update everything:  mise install   |   mise upgrade
+# Prebuilt binaries into ~/.local/share/mise — no sudo, same on macOS / Ubuntu / RHEL.
+
+[tools]
+# Editor
+neovim = "0.12"              # vim.pack requires >= 0.12.1
+tree-sitter = "latest"       # nvim-treesitter parser builds (also needs a C compiler)
+lua-language-server = "latest"
+
+# Shell
+fzf = "latest"               # `fzf --zsh` needs >= 0.48; tmux-sessionizer
+starship = "latest"
+ripgrep = "latest"           # telescope live_grep
+
+# Runtimes
+node = "lts"                 # copilot.vim, npx prettier, LSPs below
+uv = "latest"                # ty LSP, ruff format, neotest-python
+
+# Language servers (global npm packages, managed by mise)
+"npm:typescript" = "latest"
+"npm:typescript-language-server" = "latest"
+"npm:yaml-language-server" = "latest"

@@ -1,6 +1,6 @@
 # dotfiles
 
-Symlink-based dotfiles manager for macOS. Configs are kept in this repo and deployed to their expected locations via symlinks using `dot.py`.
+Symlink-based dotfiles for macOS and Linux (Ubuntu, RHEL). Configs are kept in this repo and deployed to their expected locations via symlinks using `dot.py`.
 
 ## Managed configs
 
@@ -14,6 +14,18 @@ Symlink-based dotfiles manager for macOS. Configs are kept in this repo and depl
 | `scripts/tmux-sessionizer` | `~/.local/bin/tmux-sessionizer` |
 | `config/tmux-sessionizer.conf` | `~/.config/tmux-sessionizer/tmux-sessionizer.conf` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
+| `mise/config.toml` | `~/.config/mise/config.toml` |
+
+## New machine
+
+```bash
+./setup.sh              # system packages + mise tools + symlinks + nvim plugins
+./setup.sh --no-system  # same, without sudo/system packages
+```
+
+System packages (zsh, tmux, C compiler, clipboard, alacritty, Nerd Font) come from brew / apt / dnf.
+Everything else (nvim, node, uv, fzf, starship, ripgrep, tree-sitter, language servers) is pinned in
+`mise/config.toml` and installed by [mise](https://mise.jdx.dev) into `$HOME` — no sudo.
 
 ## Deploy
 
@@ -76,8 +88,12 @@ Add new entries here to include additional configs in the deploy.
 
 ## Prerequisites
 
-| Tool | Version | Install |
-|------|---------|---------|
-| `fzf` | any | `brew install fzf` — required by tmux-sessionizer |
-| `nvim` | ≥ 0.12.1 | `brew install neovim` |
-| `tmux` | ≥ 3.4 | `brew install tmux` |
+Installed by `setup.sh`. Tool versions live in `mise/config.toml` (`mise install` / `mise upgrade`).
+
+| Tool | Version | Source |
+|------|---------|--------|
+| `nvim` | ≥ 0.12.1 | mise |
+| `fzf`, `starship`, `ripgrep`, `tree-sitter` | latest | mise |
+| `node`, `uv`, LSPs | see `mise/config.toml` | mise |
+| `tmux` | ≥ 3.4 | brew / apt / dnf |
+| `zsh`, C compiler, `make` | any | brew / apt / dnf |
